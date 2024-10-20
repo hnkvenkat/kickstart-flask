@@ -24,7 +24,7 @@ sudo docker image build -t sloopstash/redis:v4.0.9 -f image/redis/4.0.9/amazon-l
       steps {
         sh '''cd kickstart-docker
 sudo docker compose -f compose/crm.yml --env-file compose/$(echo $qa2 | tr \'[:lower:]\' \'[:upper:]\' ).env -p sloopstash-${qa2}-crm up -d
-sudo docker container exec sloopstash-${qa2}-crm-app-1 pip install pytes'''
+sudo docker container exec sloopstash-${qa2}-crm-app-1 pip install pytest'''
       }
     }
 
